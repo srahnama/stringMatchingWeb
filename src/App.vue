@@ -1,17 +1,33 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <About />
+    <TableCustomSort :data="data" />
+    <TableCustomSort :data="data1" />
+    <TableCustomSort :data="data2" />
+    <TableCustomSort :data="data3" />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-
+import TableCustomSort from './components/TableCustomSort.vue'
+import About from './components/About.vue'
+import data from './assets/aesop11_result.json'
+import data1 from './assets/gulliver_result.json'
+import data2 from './assets/hitch2_result.json'
+import data3 from './assets/hound-b_result.json'
 export default {
   name: 'app',
+  data: () => ({
+      
+      data:  data,    
+      data1:  data1,    
+      data2:  data2,    
+      data3:  data3,    
+    }),
   components: {
-    HelloWorld
+    TableCustomSort,
+    About
   }
 }
 </script>
